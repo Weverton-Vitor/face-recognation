@@ -50,12 +50,12 @@ import cv2 # realiza o import da função cv2
 
 print(cv2.__version__) # verifica qual a versão instalada
 
-help(cv2.face) # ajuda sobre a função cv2
+#help(cv2.face) # ajuda sobre a função cv2
 
 imagem = cv2.imread('outros\\carros5.jpg') # comando para leitura de uma imagem, atente-se para o caminho e extensão da imagem
 imagemCinza = cv2.cvtColor(imagem, cv2.COLOR_BGR2GRAY) # transforma a imagem colorida em escala de cinza
 
 cv2.imshow("Original", imagem) # comando para abrir a imagem original colorida
-cv2.imshow("Cinza", imagemCinza) # comando para abrir a imatem em escala de cinza
+cv2.imshow("Cinza", imagemCinza) # comando para abrir a imagem em escala de cinza
 
 cv2.waitKey() # comando que aguarda o fechamento das janelas com as imagens
