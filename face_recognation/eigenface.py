@@ -49,9 +49,9 @@ do projeto, no menu lateral esquerdo.
 # Importando as bibliotecas
 import cv2
 
-detectorFace = cv2.CascadeClassifier("cascades\\haarcascade_frontalface_default.xml") # uso do haarcascade pora detectar face
+detectorFace = cv2.CascadeClassifier("../cascades/haarcascade_frontalface_default.xml") # uso do haarcascade pora detectar face
 reconhecedor = cv2.face.EigenFaceRecognizer_create() # traz a função do reconhecedor Eigenface
-reconhecedor.read('cascades\\classificadorEigen.yml') # traz o classificador treinado
+reconhecedor.read('../cascades/classificadorEigen.yml') # traz o classificador treinado
 largura, altura = 200, 200 # dimensão da imagem
 font = cv2.FONT_HERSHEY_COMPLEX_SMALL #tipo de letra
 camera = cv2.VideoCapture(0) # inicia a webcam para realizar o reconhecimento baseado no classificador

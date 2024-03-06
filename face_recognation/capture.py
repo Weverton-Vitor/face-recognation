@@ -50,8 +50,8 @@ do projeto, no menu lateral esquerdo.
 import cv2
 import numpy as np
 
-classificador = cv2.CascadeClassifier("cascades\\haarcascade_frontalface_default.xml") # utilizando o haarcascade para detectar a face
-classificadorOlho = cv2.CascadeClassifier("cascades\\haarcascade_eye.xml") # utilizando o haarcascade para detectar olhos
+classificador = cv2.CascadeClassifier("../cascades/haarcascade_frontalface_default.xml") # utilizando o haarcascade para detectar a face
+classificadorOlho = cv2.CascadeClassifier("../cascades/haarcascade_eye.xml") # utilizando o haarcascade para detectar olhos
 camera = cv2.VideoCapture(0) # 0 siginifica que irá usar a câmera padrão e 1 webcam externa
 amostra = 1
 numeroAmostras = 25 # captura de 25 imagens da face, varie a posição ao capturar
@@ -76,7 +76,7 @@ while True:
             if np.average(imagemCinza) > 100:
                 imagemFace = cv2.resize(imagemCinza[y:y + a, x:x + l], (largura, altura))
                 # criar a pasta fotos: New > Directory > fotos
-                cv2.imwrite("fotos/pessoa." + str(id) + "." + str(amostra) + ".jpg", imagemFace) # nomeia as imagens capturadas
+                cv2.imwrite("./fotos/pessoa." + str(id) + "." + str(amostra) + ".jpg", imagemFace) # nomeia as imagens capturadas
                 print("[foto " + str(amostra) + " capturada com sucesso]")
                 amostra += 1
 
