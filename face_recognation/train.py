@@ -56,7 +56,8 @@ fisherface = cv2.face.FisherFaceRecognizer_create() # traz a função de reconhe
 lbph = cv2.face.LBPHFaceRecognizer_create() # traz a função de reconhecimento LBPH
 
 def getImagemComId():
-    caminhos = [os.path.join('fotos', f) for f in os.listdir('fotos')] # irá percorrer todas as imagens da pasta fotos criada na captura
+    caminhos = [os.path.join('../face_recognation\\fotos', f) for f in os.listdir('fotos')] # irá percorrer todas as imagens da pasta fotos criada na captura
+    print(caminhos)
     faces = []
     ids = []
     for caminhoImagem in caminhos:
@@ -68,15 +69,17 @@ def getImagemComId():
 
 ids, faces = getImagemComId()
 
+print(ids)
+
 print("Treinando...") # indicação que está havendo o treinamento, conforme o reconhecedor
 eigenface.train(faces, ids)
-eigenface.write('cascades\\classificadorEigen.yml') # realiza o treinamento e cria o classificador Eingeface
+eigenface.write('../cascades/classificadorEigen.yml') # realiza o treinamento e cria o classificador Eingeface
 
-fisherface.train(faces, ids)
-fisherface.write('cascades\\classificadorFisher.yml') # realiza o treinamento e cria o classificador Fisherface
+# fisherface.train(faces, ids)
+# fisherface.write('../cascades/classificadorFisher.yml') # realiza o treinamento e cria o classificador Fisherface
 
 lbph.train(faces, ids)
-lbph.write('cascades\\classificadorLBPH.yml') # realiza o treinamento e cria o classificador LBPH
+lbph.write('../cascades/classificadorLBPH.yml') # realiza o treinamento e cria o classificador LBPH
 
 print("Treinamento realizado") # indica que o treinamento foi finalizado
 #depois de treinado ele vai gerar os arquivos que vão aparecer no menu ao lado e serão utilizados para o algoritmo de reconhecimento
