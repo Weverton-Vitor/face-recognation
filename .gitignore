@@ -2,4 +2,6 @@
 face_recognation/fotos
 models/
 tracking_material
-/images_test
+images_test
+speech_material
+
